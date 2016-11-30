@@ -1,0 +1,28 @@
+{
+  "name": "jssetup",
+  "version": "0.0.1",
+  "description": "synchronize all functions in a queue using by injecting a linking",
+  "main": "bundle.js",
+  "dependencies": {
+    "is-plain-object": "^2.0.1"
+  },
+  "devDependencies": {
+    "mocha": "^3.2.0",
+    "sinon": "^1.17.6",
+    "webpack": "^1.13.0",
+    "webpack-dev-server": "^1.16.1"
+  },
+  "scripts": {
+    "test": "mocha",
+    "start": "webpack-dev-server --hot",
+    "build": "webpack -p"
+  },
+  "keywords": [
+    "synchronizer",
+    "queue",
+    "asynchronous",
+    "async"
+  ],
+  "author": "hbaptiste",
+  "license": "MIT"
+}
