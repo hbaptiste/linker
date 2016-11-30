@@ -27,7 +27,7 @@ linker
   
   ```
   First we create an instance of the linker. Then we add some functions the queue with link().
-  We provide a callback to the onComplete method that will be called when all the function will be executed.
+  We provide a callback to the onComplete method that will be called when all the functions will be executed.
   When we are done, we start to process the queue with end().
   
   That was easy. Now, as we are coding in JavaScript, asynchronous things will happen in you code! 
@@ -61,7 +61,7 @@ linker
     have to wait for that function to allow it to move to the next function in the queue. 
     That's what the call to $linker.next does!
     
-    If you are asking yourself again where does the next method comes from, ask no more, buzzword coming through : 
+    If you are asking yourself again where does the next method come from; ask no more, buzzword coming through : 
     Dependency Injection!
     
     In other words, the linker knows how to call the adder() function with the right parameter.
