@@ -28,7 +28,7 @@ if (typeof Object.assign != 'function') {
 var states = {"PENDING": 0, "PROCESSING": 1, "ABORTED": 2};
 
 var Linker = function(start, settings) {
-
+  'use strict';
   if (arguments.length === 1) {
     if (isPlainObject(start)) { settings = start; }
     if (!isPlainObject(start) && typeof start !== "function") {
