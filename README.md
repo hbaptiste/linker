@@ -26,7 +26,12 @@ linker
   }).end();
   
   ```
-  That was easy. Now, as are coding in JavaScript, let's transform our adder to an 	asynchronous function.
+  First we create an instance of the linker. Then we add some functions the queue with link().
+  We provide a callback to the onComplete method that will be called when all the function will be executed.
+  When we are done, we start to process the queue with end().
+  
+  That was easy. Now, as we are coding in JavaScript, asynchronous things will happen in you code! 
+  Let's transform our adder to an asynchronous function and see how we can deal with that.
   
 ```javascript
   var adder = function(a, b, $linker) {
@@ -45,9 +50,20 @@ linker
       console.log(result); // [58, 46, 'same']
     }).end(); 
    ```
-    When we are dealing with a asynchronous function, it must tell when the linker should move on to the next function.
-    Where the $linker parameter comes from? We can look at it  as a contact between the linker and the function.
-    if you define a function that accepts a $linker parameter it will be intepreted as the function want to manage how
-    the linker should process its queue.
-  
-  
+    When we are dealing with an asynchronous function, the latter has the responsability to tell the linker
+    when it should move on and execute the next function in the queue. Most of the time it will be when it's
+    done computing. You can think of it as the 'resolve' method of a promise.
+    
+    Notice the $linker parameter in the adder function. Where does it come from? We can look at it  as a contact 
+    between the linker and the function.
+    
+    if you add to the queue a function that has a parameter named *$linker* the linker will understand that it will
+    have to wait for that function to allow it to move to the next function in the queue. 
+    That's what the call to $linker.next does!
+    
+    If you are asking yourself again where does the next method comes from, ask no more, buzzword coming through : 
+    Dependency Injection!
+    
+    In other words, the linker knows how to call the adder() function with the right parameter.
+    
+   
