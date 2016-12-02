@@ -51,3 +51,46 @@ linker
     }).end();
     
    ```
+
+When we are dealing with an asynchronous function, the latter has the responsability to tell the linker
+
+when it should move on and execute the next function in the queue. Most of the time it will be when it's
+
+done computing. You can think of it as the 'resolve' method of a promise.
+
+Notice the $linker parameter in the adder function. Where does it come from? We can look at it  as a contact
+between the linker and the function.
+
+if you add to the queue a function that has a parameter named *$linker* the linker will understand that it will
+
+have to wait for that function to allow it to move to the next function in the queue. 
+That's what the call to $linker.next does!
+If you are asking yourself again where does the next method come from; ask no more, buzzword coming through : 
+Dependency Injection!
+
+In other words, the linker knows how to call the adder() function with the right parameter.
+
+## More about the $linker
+
+In the previous example the $linker was the last parameter. It's not mandatory. It's just convenient. When
+$linker is the last parameter the linker just "knows" how to handle your function.
+
+What if we decide to change or adder function? Let's just do that.
+
+```javascript
+var adder = function(a, $linker, b){
+  var r = a + b;
+  $linker.next(r);
+}
+var linker = new Linker();
+linker.
+  link(adder, 13, '$linker', 10)
+  .link(id, 'same')
+  .onComplete(function(result){
+    console.log(result); //[23, 'same']
+  })
+  .end()
+  
+  ```
+As the $linker is not the last parameter of the *adder* function, we MUST provide it as a *ghost* parameter 
+when we want to call it with the linker.
