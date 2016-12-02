@@ -8,11 +8,11 @@ A exemple will be more eloquent.
 
 var adder = function(a, b) { return a+b; }
 
-var multiplyBy2 = function(a){ return a*2; }
+var multiplyBy2 = function(a) { return a*2; }
 
-var multiplyBy3 = function(a){ return a*3; }
+var multiplyBy3 = function(a) { return a*3; }
 
-var id = function (params){ return params; }
+var id = function (params) { return params; }
 
 
 var linker = new Linker();
@@ -35,7 +35,7 @@ linker
   
 ```javascript
   var adder = function(a, b, $linker) {
-    setTimeout(function(){
+    setTimeout(function() {
       var result = a + b;
       $linker.next(result);
     }, 500);
@@ -46,7 +46,7 @@ linker
     .link(adder, 10, 48)
     .link(adder, 45, 1)
     .link(id, 'same')
-    .onComplete(function(result){
+    .onComplete(function(result) {
       console.log(result); // [58, 46, 'same']
     }).end();
     
@@ -86,7 +86,7 @@ var linker = new Linker();
 linker.
   link(adder, 13, '$linker', 10)
   .link(id, 'same')
-  .onComplete(function(result){
+  .onComplete(function(result) {
     console.log(result); //[23, 'same']
   })
   .end()
