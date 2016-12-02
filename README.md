@@ -51,7 +51,7 @@ linker
   var linker = new Linker();
   linker
     .link(adder, 10, 48)
-    .multiplyBy3(5)
+    .link(multiplyBy3, 5)
     .link(adder, 45, 1)
     .link(id, 'same')
     .onComplete(function(result) {
