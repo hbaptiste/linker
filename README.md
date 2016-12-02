@@ -34,6 +34,13 @@ linker
   Let's transform our adder to an asynchronous function and see how we can deal with that.
   
 ```javascript
+  var multiplyBy3 = function(a, $linker) {
+    setTimeout(function() {
+      var r = a * 3;
+      $linker.next(r);
+    }, 700);
+  } 
+  
   var adder = function(a, b, $linker) {
     setTimeout(function() {
       var result = a + b;
@@ -44,10 +51,11 @@ linker
   var linker = new Linker();
   linker
     .link(adder, 10, 48)
+    .multiplyBy3(5)
     .link(adder, 45, 1)
     .link(id, 'same')
     .onComplete(function(result) {
-      console.log(result); // [58, 46, 'same']
+      console.log(result); // [58, 15, 46, 'same']
     }).end();
     
    ```
@@ -78,7 +86,7 @@ $linker is the last parameter the linker just "knows" how to handle your functio
 What if we decide to change or adder function? Let's just do that.
 
 ```javascript
-var adder = function(a, $linker, b){
+var adder = function(a, $linker, b) {
   var r = a + b;
   $linker.next(r);
 }
