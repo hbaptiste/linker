@@ -70,7 +70,7 @@ Dependency Injection!
 
 In other words, the linker knows how to call the adder() function with the right parameter.
 
-## More about the $linker
+## More about $linker
 
 In the previous example the $linker was the last parameter. It's not mandatory. It's just convenient. When
 $linker is the last parameter the linker just "knows" how to handle your function.
