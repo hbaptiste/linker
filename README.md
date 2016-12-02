@@ -48,22 +48,6 @@ linker
     .link(id, 'same')
     .onComplete(function(result){
       console.log(result); // [58, 46, 'same']
-    }).end(); 
+    }).end();
+    
    ```
-    When we are dealing with an asynchronous function, the latter has the responsability to tell the linker
-    when it should move on and execute the next function in the queue. Most of the time it will be when it's
-    done computing. You can think of it as the 'resolve' method of a promise.
-    
-    Notice the $linker parameter in the adder function. Where does it come from? We can look at it  as a contact 
-    between the linker and the function.
-    
-    if you add to the queue a function that has a parameter named *$linker* the linker will understand that it will
-    have to wait for that function to allow it to move to the next function in the queue. 
-    That's what the call to $linker.next does!
-    
-    If you are asking yourself again where does the next method come from; ask no more, buzzword coming through : 
-    Dependency Injection!
-    
-    In other words, the linker knows how to call the adder() function with the right parameter.
-    
-   
