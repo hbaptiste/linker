@@ -66,22 +66,22 @@ when it should move on and execute the next function in the queue. Most of the t
 
 done computing. You can think of it as the 'resolve' method of a promise.
 
-Notice the $linker parameter in the adder function. Where does it come from? We can look at it  as a contact
+Notice the **_$linker_** parameter in the adder function. Where does it come from? We can look at it  as a contact
 between the linker and the function.
 
-if you add to the queue a function that has a parameter named *$linker* the linker will understand that it will
-
+if you add to the queue a function that has a parameter named **_$linker_** the linker will understand that it will
 have to wait for that function to allow it to move to the next function in the queue. 
 That's what the call to $linker.next does!
-If you are asking yourself again where does the next method come from; ask no more, buzzword coming through : 
+
+If you are asking yourself again where does the *next* method come from; ask no more, buzzword coming through : 
 Dependency Injection!
 
-In other words, the linker knows how to call the adder() function with the right parameter.
+In other words, the linker knows how to call the **adder()** function with the right parameter.
 
 ## More about $linker
 
-In the previous example the $linker was the last parameter. It's not mandatory. It's just convenient. When
-$linker is the last parameter the linker just "knows" how to handle your function.
+In the previous example the **_$linker_** was the last parameter. It's not mandatory. It's just convenient. When
+**_$linker_** is the last parameter the linker just "knows" how to handle your function.
 
 What if we decide to change or adder function? Let's just do that.
 
