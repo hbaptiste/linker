@@ -59,7 +59,7 @@ linker
     }).end();
     
    ```
-## Handling asynchronous function
+## Handling asynchronous functions
 When we are dealing with an asynchronous function, the latter has the responsability to tell the linker
 
 when it should move on and execute the next function in the queue. Most of the time it will be when it's
