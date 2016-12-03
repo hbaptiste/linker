@@ -1,7 +1,7 @@
 # linker
 A simple JS Queue synchronizer!
 
-Linker allows you to execute a function queue in the right order regardless of the nature of the function.
+Linker allows you to execute, in the right order, a queue of javascript functions regardless of their nature.
 A exemple will be more eloquent.
 
 ```javascript
