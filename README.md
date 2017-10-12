@@ -83,7 +83,7 @@ In other words, the linker knows how to call the **adder()** function with the r
 In the previous example the **_$linker_** was the last parameter. It's not mandatory. It's just convenient. When
 **_$linker_** is the last parameter the linker just "knows" how to handle your function.
 
-What if we decide to change or adder function? Let's just do that.
+What if we decide to change our adder function? Let's just do that.
 
 ```javascript
 var adder = function(a, $linker, b) {
