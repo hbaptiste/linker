@@ -73,7 +73,7 @@ if you add to the queue a function that has a parameter named **_$linker_** the 
 have to wait for that function to allow it to move to the next function in the queue. 
 That's what the call to $linker.next does!
 
-If you are asking yourself again where does the *next* method come from; ask no more, buzzword coming through : 
+If you are asking yourself again where does the *next* method comes from; ask no more, buzzword coming through : 
 Dependency Injection!
 
 In other words, the linker knows how to call the **adder()** function with the right parameter.
