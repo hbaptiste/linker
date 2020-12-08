@@ -101,4 +101,4 @@ linker.
   
   ```
 As the $linker is not the last parameter of the *adder* function, we MUST provide it as a *ghost* parameter 
-when we want to call it with the linker.  The ghost parameters is provided as a string: *$linker*. It's name is mandatory and it should always be $linker. 
+when we want to call it with the linker.  The ghost parameters is provided as a string: *$linker*. Its name is mandatory and it should always be $linker. 
