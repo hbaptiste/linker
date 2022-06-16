@@ -66,7 +66,7 @@ when it should move on and execute the next function in the queue. Most of the t
 
 done computing. You can think of it as the 'resolve' method of a promise.
 
-Notice the **_$linker_** parameter in the adder function. Where does it come from? We can look at it  as a contact
+Notice the **_$linker_** parameter in the adder function. Where does it come from? We can look at it  as a contract
 between the linker and the function.
 
 if you add to the queue a function that has a parameter named **_$linker_** the linker will understand that it will
